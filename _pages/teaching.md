@@ -2,10 +2,24 @@
 layout: page
 permalink: /teaching/
 title: teaching
-description: Materials for courses you taught. Replace this text with your description.
+description: 
 nav: true
 ---
 
-For now, this page is assumed to be a static description of your courses. You can convert it to a collection similar to `_projects/` so that you can have a dedicated page for each course.
-
-Organize your courses by years, topics, or universities, however you like!
+<div class="teaching">
+    <!-- Copy paste the below block for another entry for teaching -->
+    <div class="card">
+    <div class="row row-cols-1">
+        <div class="card-item col">
+              <div class="row ml-0">
+                  <div class="card-body">
+                    <h4 class="card-title">Computer Graphics
+                        <div class="float-md-right" style="padding-right: 10px;">IIITDM Kancheepuram </div>
+                    </h4>
+                    <p class="card-text">Fall 2020 : Undergraduate Teaching Assistant</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
