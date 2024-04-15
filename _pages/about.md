@@ -2,24 +2,23 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: Graduate Student @ <a href="https://www.psu.edu/">PennState</a> 
 
 profile:
   align: right
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
 
 news: true # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+I'm a second-year graduate student at [Pennsylvania State University](https://www.psu.edu/), pursuing a PhD degree in Computer Science and Engineering.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+Before my graduate studies, I was a data engineer at [Navis](https://www.navis.com) for two wonderful years (2020-2022). There, I worked on machine learning applications in shipping terminal operations. I completed my Bachelor's from the Indian Institute of Information Technology, Design and Manufacturing, Kancheepuram ([IIITDM Kancheepuram](http://www.iiitdm.ac.in)) in 2020. 
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+My research interests lie in the field of machine learning and efficient AI. I am interested in making AI and machine learning models efficient for edge devices. I’m also keen to explore the applications of ML/DL in various domains (computer vision tasks, supply chain logistics, etc.).
+
+In my free time, I enjoy hitting the gym, cycling and speedcubing. 
