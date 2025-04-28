@@ -85,10 +85,12 @@ When a camera sits still, most of the scene stays the same. If a handful of pixe
 </ol>
 
 <div class="col-sm mt-3 mt-md-0 text-center">
-  <img src="/assets/blogs/insect_detection/motion_detection/motion_detection_mask.png" 
+  <div style="background: white; padding: 10px; display: inline-block; border-radius: 8px;">
+      <img src="/assets/blogs/insect_detection/motion_detection/motion_detection_mask.png" 
        class="img-fluid rounded" 
        style="margin-bottom: 20px;" 
        alt="Motion Detection Mask">
+  </div>
 </div>
 <div class="caption mt-2 text-center">
   Fig. 3: Difference mask obtained by subtracting the current frame from the background and then thresholding.
@@ -107,11 +109,13 @@ Motion detection is all around us. Here are a few real-world examples:
 
 ## Insect detection with YOLO
 
-Motion detection points out _where_ to look, and **YOLO** tells us _what_ is moving. YOLO is an object detection model that draws boxes around objects and labels them. We use YOLO for insects because:
+Motion detection points out _where_ to look, and **YOLO** tells us _what_ is moving. YOLO<d-cite key="redmon2016you"></d-cite> is an object detection model that draws boxes around objects and labels them. We use YOLO for insects because:
 
 * **Real-time:** Runs at video speed, even on small devices.  
 * **All-in-one:** Finds both location and the insect’s identity in a single pass.  
 * **Open-source:** Free models (YOLOv8) and easy training tools are available.
+
+We now describe the original version of YOLO. Although many improvements have been made across subsequent versions, the core ideas outlined below remain the same.
 
 ### The quick YOLO tour
 
@@ -119,53 +123,53 @@ Motion detection points out _where_ to look, and **YOLO** tells us _what_ is mov
   <li>
     <strong>Candidate frames</strong><br>
     <em>After motion detection, we extract snapshots that might contain insects.</em>
-    <figure class="text-center">
+    <div class="text-center">
       <img src="/assets/blogs/insect_detection/yolo_steps/input_image.jpg" 
-           alt="Input Image" 
-           class="img-fluid rounded">
-      <figcaption class="mt-2" style="font-size: 0.9rem; color: #555;">
-        Fig. 4: Input image for insect detection, obtained from motion detection.
-      </figcaption>
-    </figure>
+          alt="Input Image" 
+          class="img-fluid rounded">
+        <div class="caption mt-2 text-center">
+          Fig. 4: Input image for insect detection, obtained from motion detection.
+        </div>
+    </div>
   </li>
 
   <li>
     <strong>Resize & grid</strong><br>
     <em>Resize each snapshot to 448×448 pixels and overlay a 7×7 grid.</em>
-    <figure class="text-center">
+    <div class="text-center">
       <img src="/assets/blogs/insect_detection/yolo_steps/cropped_grid_image.png" 
-           alt="Cropped and 7x7 grid overlayed image" 
-           class="img-fluid rounded">
-      <figcaption class="mt-2" style="font-size: 0.9rem; color: #555;">
-        Fig. 5: A 7×7 grid overlaid on the cropped image.
-      </figcaption>
-    </figure>
+          alt="Cropped and 7x7 grid overlayed image" 
+          class="img-fluid rounded">
+        <div class="caption mt-2 text-center">
+          Fig. 5: A 7×7 grid overlaid on the cropped image.
+        </div>
+    </div>
   </li>
 
   <li>
     <strong>One glance, many predictions</strong><br>
     <em>For each grid cell, YOLO’s neural network predicts several bounding boxes, confidence scores, and class probabilities for different insects.</em>
-    <figure class="text-center">
+    <div class="text-center">
       <img src="/assets/blogs/insect_detection/yolo_steps/grid_cell_prediction.png" 
-           alt="YOLO grid cell predictions" 
-           class="img-fluid rounded">
-      <figcaption class="mt-2" style="font-size: 0.9rem; color: #555;">
-        Fig. 6: The green box has a high confidence score and class probability; the red boxes are low confidence.
-      </figcaption>
-    </figure>
+          alt="YOLO grid cell predictions"
+          class="img-fluid rounded">
+        <div class="caption mt-2 text-center">
+          Fig. 6: The green box has a high confidence score and class probability; the red boxes are low confidence.
+        </div>
+    </div>
   </li>
 
   <li>
     <strong>Keep the best</strong><br>
     <em>Non-Maximum Suppression (NMS)<d-cite key="hosang2017learning"></d-cite> keeps the highest-scoring box and removes overlapping, lower-scoring ones.</em>
-    <figure class="text-center">
+    <div class="text-center">
       <img src="/assets/blogs/insect_detection/yolo_steps/non_maximum_suppression.png" 
            alt="Non Maximum Suppression process" 
            class="img-fluid rounded">
-      <figcaption class="mt-2" style="font-size: 0.9rem; color: #555;">
-        Fig. 7: NMS removes duplicate boxes, leaving one clear box per object.
-      </figcaption>
-    </figure>
+        <div class="caption mt-2 text-center">
+          Fig. 7: NMS removes duplicate boxes, leaving one clear box per object.
+        </div>
+    </div>
     <p class="mt-2">
       After predicting many boxes, NMS:
     </p>
@@ -189,14 +193,16 @@ Motion detection points out _where_ to look, and **YOLO** tells us _what_ is mov
 <ol>
   <li>
     <strong>How are the bounding boxes represented?</strong>
-    <figure class="text-center">
-      <img src="/assets/blogs/insect_detection/yolo_steps/bounding_box_representation.png" 
-           alt="Bounding box representation" 
-           class="img-fluid rounded">
-      <figcaption class="mt-2" style="font-size: 0.9rem; color: #555;">
+    <div class="text-center">
+      <div style="background: white; padding: 10px; display: inline-block; border-radius: 8px;">
+        <img src="/assets/blogs/insect_detection/yolo_steps/bounding_box_representation.png" 
+            alt="Bounding box representation" 
+            class="img-fluid rounded">
+      </div>
+      <div class="caption mt-2 text-center">
         Fig. 8: Bounding box representation.
-      </figcaption>
-    </figure>
+      </div>
+    </div>
     <ul style="margin-top: 0.5rem; margin-bottom: 0;">
       <li>Each box is defined by (cx, cy, w, h).</li>
       <li>(cx, cy) is the box center, normalized within its grid cell.</li>
@@ -206,14 +212,14 @@ Motion detection points out _where_ to look, and **YOLO** tells us _what_ is mov
 
   <li>
     <strong>What if the insect overlaps two grid cells?</strong>
-    <figure class="text-center">
+      <div class="text-center">
       <img src="/assets/blogs/insect_detection/yolo_steps/overlapping_grid_cells.png" 
            alt="Overlapping grid cells" 
            class="img-fluid rounded">
-      <figcaption class="mt-2" style="font-size: 0.9rem; color: #555;">
-        Fig. 9: Handling overlapping grid cells.
-      </figcaption>
-    </figure>
+        <div class="caption mt-2 text-center">
+          Fig. 9: Handling overlapping grid cells.
+        </div>
+    </div>
     <ul style="margin-top: 10px;">
       <li>Only the cell (marked as 1) containing the insect’s center (marked by a star) makes the prediction.</li>
       <li>Neighboring cells ignore this insect and focus on objects whose centers lie inside them.</li>
