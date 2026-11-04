@@ -2,46 +2,26 @@
 layout: page
 permalink: /repositories/
 title: repositories
-description: Edit the `_data/repositories.yml` and change the `github_users` and `github_repos` lists to include your own GitHub profile and repositories.
-nav: true
+description: Code for my research and product prototypes.
+nav: false
 nav_order: 4
 ---
 
-{% if site.data.repositories.github_users %}
+Find more of my work on [GitHub](https://github.com/ajaynarayanan).
 
-## GitHub users
-
-<div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
-  {% for user in site.data.repositories.github_users %}
-    {% include repository/repo_user.liquid username=user %}
-  {% endfor %}
-</div>
-
----
-
-{% if site.repo_trophies.enabled %}
-{% for user in site.data.repositories.github_users %}
-{% if site.data.repositories.github_users.size > 1 %}
-
-  <h4>{{ user }}</h4>
-  {% endif %}
-  <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
-  {% include repository/repo_trophies.liquid username=user %}
+<div class="projects">
+  <div class="row row-cols-1 row-cols-md-2">
+    {% for repo in site.data.repositories.github_repos %}
+      <div class="col">
+        <div class="card h-100 hoverable">
+          <div class="card-body">
+            <a class="project-link" href="https://github.com/{{ repo }}">
+              <h2 class="card-title">{{ repo | split: '/' | last }}</h2>
+              <p class="card-text">{{ site.data.repositories.descriptions[repo] }}</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
   </div>
-
----
-
-{% endfor %}
-{% endif %}
-{% endif %}
-
-{% if site.data.repositories.github_repos %}
-
-## GitHub Repositories
-
-<div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
-  {% for repo in site.data.repositories.github_repos %}
-    {% include repository/repo.liquid repository=repo %}
-  {% endfor %}
 </div>
-{% endif %}

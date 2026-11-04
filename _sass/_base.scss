@@ -656,6 +656,11 @@ footer.sticky-bottom {
 // Projects
 
 .projects {
+  .project-link {
+    display: block;
+    color: inherit;
+  }
+
   a {
     text-decoration: none;
 

@@ -1,14 +1,18 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - ajaynarayanan
 
 repo_description_lines_max: 2
 
 github_repos:
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons
+  - ajaynarayanan/InsectAgent
+  - ajaynarayanan/DIRL-ABRL
+  - ajaynarayanan/FaceMarker
+  - ajaynarayanan/SongRecommender
+  - ajaynarayanan/SoleMate
+
+descriptions:
+  ajaynarayanan/InsectAgent: On-device insect recognition with computer vision and multimodal models.
+  ajaynarayanan/DIRL-ABRL: RGB-IR cross-modality person re-identification.
+  ajaynarayanan/FaceMarker: Automated attendance marking with facial recognition.
+  ajaynarayanan/SongRecommender: Music recommendations using collaborative filtering.
+  ajaynarayanan/SoleMate: A dynamic, customisable insole for assessing the risk of foot diseases.

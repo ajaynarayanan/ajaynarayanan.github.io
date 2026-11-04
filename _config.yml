@@ -7,15 +7,16 @@ first_name: Ajay Narayanan
 middle_name:
 last_name: Sridhar
 email: narayananajay99@gmail.com
-description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+description: >
+  Ajay Narayanan Sridhar's research in human-centered and multimodal AI,
+  visual accessibility, retrieval-augmented systems, and efficient on-device inference at Georgia Tech.
 footer_text: >
-keywords: jekyll, jekyll-theme, academic-website, portfolio-website # add your own keywords or leave empty
+keywords: Ajay Narayanan Sridhar, Georgia Tech, accessibility, multimodal AI, retrieval, on-device AI, LLM routing
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-icon:  # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
+icon: # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
 url: https://ajaynarayanan.github.io # the base hostname & protocol for your site
-baseurl:  # the subpath of your site, e.g. /blog/. Leave blank for root
+baseurl: # the subpath of your site, e.g. /blog/. Leave blank for root
 last_updated: false # set to true if you want to display last updated in the footer
 impressum_path: # set to path to include impressum link in the footer, use the same path as permalink in a page, helps to conform with EU GDPR
 back_to_top: true # set to false to disable the back to top button
@@ -26,6 +27,7 @@ back_to_top: true # set to false to disable the back to top button
 
 # repo color theme
 repo_theme_light: default # https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
+repo_theme_dark: dark
 repo_trophies:
   enabled: true
   theme_light: flat # https://github.com/ryo-ma/github-profile-trophy
@@ -83,8 +85,8 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name:  # blog_name will be displayed in your blog page
-blog_description: 
+blog_name: blog
+blog_description: Notes on computer vision, accessibility, and machine learning systems.
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 
@@ -112,7 +114,7 @@ giscus:
   lang: en
 
 # Disqus comments (DEPRECATED)
-disqus_shortname: al-folio # put your disqus shortname
+disqus_shortname:
 # https://help.disqus.com/en/articles/1717111-what-s-a-shortname
 
 # External sources.
@@ -178,8 +180,17 @@ kramdown:
       start_line: 1
 
 # Includes & excludes
-include: ["_pages/about.md", "_pages/projects.md", "_pages/publications.md", "_pages/teaching.md", "_pages/blog.md"]
+include:
+  - _pages/about.md
+  - _pages/blog.md
+  - _pages/projects.md
+  - _pages/publications.md
+  - _pages/cv.md
+  - _pages/teaching.md
+  - _pages/news.md
+  - _pages/404.md
 exclude:
+  - assets/jupyter/
   - bin/
   - CONTRIBUTING.md
   - CUSTOMIZE.md
@@ -195,6 +206,11 @@ exclude:
   - package.json
   - package-lock.json
   - _pages/about_einstein.md
+  - _pages/repositories.md
+  - _pages/profiles.md
+  - _pages/dropdown.md
+  - _pages/books.md
+  - _books/
   - _posts/2015*.md
   - _posts/2018*.md
   - _posts/2020*.md
@@ -246,6 +262,7 @@ sass:
 # -----------------------------------------------------------------------------
 
 jekyll-minifier:
+  compress_css: false # Sass already compresses main.css; avoid a slow second pass over the icon fonts.
   compress_javascript: false # set to false since we are using terser as the js minifier
   exclude: ["robots.txt", "assets/js/search/*.js"]
 
@@ -263,7 +280,7 @@ terser:
 
 jekyll-archives:
   posts:
-    enabled: [year] # enables year, tag and category archives (remove if you need to disable one of them).
+    enabled: [year, tags, categories]
     permalinks:
       year: "/blog/:year/"
       tags: "/blog/:type/:name/"
@@ -279,8 +296,8 @@ display_categories: [] # these categories will be displayed on the front page of
 # -----------------------------------------------------------------------------
 
 scholar:
-  last_name: Sridhar
-  first_name: [Ajay Narayanan, Ajay Narayanan*]
+  last_name: [Narayanan Sridhar, Sridhar]
+  first_name: [Ajay, Ajay Narayanan, Ajay Narayanan*]
 
   style: apa
   locale: en
@@ -339,7 +356,7 @@ filtered_bibtex_keywords:
   ]
 
 # Maximum number of authors to be shown for each publication (more authors are visible on click)
-max_author_limit:  # leave blank to always show all authors
+max_author_limit: # leave blank to always show all authors
 more_authors_animation_delay: 10 # more authors are revealed on click using animation; smaller delay means faster animation
 
 # Enables publication thumbnails. If disabled, none of the publications will display thumbnails, even if specified in the bib entry.

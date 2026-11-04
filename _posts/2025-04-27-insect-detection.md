@@ -3,7 +3,7 @@ layout: distill
 title: "AI for insect detection & classification"
 description: A simple, visual walkthrough of how AI can spot and identify insects using motion detection and YOLO.
 date: 2025-04-27
-tags: computer-vision, deep-learning, insects, education
+tags: [computer-vision, deep-learning, insects, education]
 giscus_comments: false
 featured: false
 

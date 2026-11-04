@@ -125,3 +125,12 @@ layout: default
     </article>
   </div>
 {% endunless %}
+
+{% if page.include_publications %}
+  <section aria-labelledby="cv-publications">
+    <h3 id="cv-publications">Publications</h3>
+    <div class="publications">
+      {% bibliography %}
+    </div>
+  </section>
+{% endif %}

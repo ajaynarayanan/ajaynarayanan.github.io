@@ -1,97 +1,190 @@
+# Fallback CV mirroring assets/json/resume.json; publications use the shared bibliography.
 - title: General Information
   type: map
   contents:
-    - name: Full Name
-      value: Albert Einstein
-    - name: Date of Birth
-      value: 14th March 1879
-    - name: Languages
-      value: English, German
-
+  - name: Name
+    value: Ajay Narayanan Sridhar
+  - name: Label
+    value: Ph.D. student in Electrical and Computer Engineering at Georgia Tech
+  - name: Email
+    value: narayananajay99@gmail.com
+  - name: Summary
+    value: Research in multimodal AI, retrieval-augmented systems, efficient on-device
+      inference, and contextual bandits for LLM routing. Advised by Prof. Vijaykrishnan
+      Narayanan; expected graduation in May 2027.
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
-      description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
-      description:
-        - Description 1.
-        - Description 2.
-
+  - title: Ph.D. in Electrical and Computer Engineering
+    institution: Georgia Institute of Technology
+    year: 2027-05 (Expected)
+    location: Atlanta, GA
+    description:
+    - 'Advisor: Prof. Vijaykrishnan Narayanan'
+  - title: M.S. in Computer Science and Engineering
+    institution: The Pennsylvania State University
+    year: 2024-08
+    location: University Park, PA
+    description:
+    - 'Advisor: Prof. Vijaykrishnan Narayanan'
+  - title: Bachelor of Technology in Computer Engineering (Honours), specialization
+      in AI and ML
+    institution: IIITDM Kancheepuram
+    year: 2020-05
+    location: Chennai, India
 - title: Experience
   type: time_table
   contents:
-    - title: Professor of Theoretical Physics
-      institution: Institute for Advanced Study, Princeton University
-      year: 1933 - 1955
-      description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Visiting Professor
-      institution: California Institute of Technology, Pasadena, California, US
-      year: 1933
-      description:
-        - Description 1.
-        - Description 2.
-
-    - title: Director
-      institution: Kaiser Wilhelm Institute for Physics, Berlin, Germany.
-      year: 1917-1933
-
-    - title: Professor of Theoretical Physics
-      institution: Karl-Ferdinand University, Prague, Czechoslovakia
-      year: 1911 - 1917
-      description:
-
-    - title: Associate Professor of Theoretical Physics
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1909 - 1911
-
-- title: Open Source Projects
+  - title: PhD Machine Learning Engineer Intern
+    institution: Dropbox
+    year: 2026-05 – 2026-08
+    location: San Francisco, CA
+    description:
+    - Developed a dense multimodal video retrieval system using CLIP frame embeddings
+      for image- and text-based search at precise timestamps, improving NDCG@10 by
+      30% over production episode-level retrieval.
+    - Won Best Technical Execution and Most Likely to Ship at the Dropbox Emerging
+      Talent Hackathon 2026 for an end-to-end agentic AI system that triaged customer
+      issues, enriched diagnostics, routed bugs to code owners, and generated JIRA
+      tickets and AI-generated PRs for human review.
+  - title: Graduate Research Assistant
+    institution: Microsystems Design Lab
+    year: 2024-08 – Present
+    location: Atlanta, GA
+    description:
+    - Investigating multimodal retrieval-augmented systems that combine learned embeddings,
+      compact memory representations, and LLM reasoning for question answering and
+      contextual recall over long-horizon user data.
+    - Developing EdgeVQA with QLoRA fine-tuning of Qwen2.5-VL-3B on VizWiz-VQA and
+      INT8/INT4 (AWQ) quantization for efficient on-device visual question answering,
+      extending NaviSense toward real-time, privacy-preserving mobile deployment.
+  - title: Software Engineer
+    institution: Navis LLC
+    year: 2022-04 – 2022-07
+    location: Chennai, India
+    description:
+    - Designed and developed an Apache Kafka-based, scalable, configuration-driven
+      RESTful machine learning platform for predictive and prescriptive use cases
+      in shipping terminal operations.
+    - Implemented missing-data handling and validation in analytics workflows, delivering
+      47% faster execution and fewer production failures.
+  - title: Associate Software Engineer
+    institution: Navis LLC
+    year: 2020-08 – 2022-03
+    location: Chennai, India
+    description:
+    - Optimized batch analytics through algorithmic refactoring and pipeline redesign,
+      reducing runtime by 31% for customer-facing reporting workflows.
+    - Implemented ETL failure detection and diagnostics, reducing root-cause analysis
+      time by 40%.
+- title: Projects
   type: time_table
   contents:
-    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-      year: 2015-now
-      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
-
-- title: Honors and Awards
-  type: time_table
-  contents:
-    - year: 1921
-      items:
-        - Nobel Prize in Physics
-        - Matteucci Medal
-    - year: 2029
-      items:
-        - Max Planck Medal
-
-- title: Academic Interests
+  - title: Correlation-Aware Contextual Bandits
+    maindescription: Applications in LLM routing.
+    description:
+    - Formulated LLM routing as a contextual bandit with correlated arms and surrogate
+      rewards; designed correlation-aware algorithms with regret guarantees robust
+      to surrogate errors while improving regret when surrogates are informative.
+    - Demonstrated up to approximately 15% higher utility across multiple LLM routing
+      benchmarks versus strong online learning baselines and competitive state-of-the-art
+      routing methods.
+    linkitems:
+    - link:
+      linkname: Project
+  - title: NaviSense
+    maindescription: Multimodal AI workflow for real-world task guidance.
+    description:
+    - Engineered a real-time multimodal pipeline combining LiDAR depth, visual inputs,
+      and LLM reasoning for grounded, step-by-step task guidance in open-world environments.
+    - Deployed LLaMA 3.2 1B Instruct on-device via ExecuTorch with 4-bit quantization,
+      balancing latency, memory, and response quality for mobile inference.
+    linkitems:
+    - link:
+      linkname: Project
+- title: Skills
   type: nested_list
   contents:
-    - title: Topic 1.
-      items:
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
-      items:
-        - Description 1.
-        - Description 2.
-
-- title: Other Interests
-  type: list
+  - title: LLMs and Generative AI
+    items:
+    - Transformers
+    - RAG
+    - Question answering
+    - Model routing and selection
+    - Prompt design
+    - Grounding and verification
+  - title: Machine Learning
+    items:
+    - PyTorch
+    - TensorFlow
+    - Fine-tuning
+    - Training and evaluation
+    - Benchmarking
+  - title: Programming
+    items:
+    - Python
+    - Java
+    - C/C++
+    - Swift
+  - title: Data and Systems
+    items:
+    - OpenSearch
+    - MySQL
+    - PostgreSQL
+    - Redis
+    - REST APIs
+    - Apache Kafka
+    - Spring Boot
+  - title: Cloud and DevOps
+    items:
+    - Docker
+    - Kubernetes
+    - AWS
+    - Azure
+    - GCP
+    - Git
+- title: Awards and Honors
+  type: time_table
   contents:
-    - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+  - title: Best Technical Execution and Most Likely to Ship
+    institution: Dropbox
+    year: '2026'
+    description:
+    - Dropbox Emerging Talent Hackathon 2026.
+  - title: AI Societal Impact Award
+    institution: Penn State
+    description:
+    - For contributions to research for people with visual impairments.
+  - title: c0mpiled Hackathon Winner
+    institution: c0mpiled
+    description:
+    - For DoomScholar, an anti-doomscrolling app.
+  - title: Best Audience Choice Poster Award
+    institution: ACM SIGACCESS
+    year: '2025'
+    description:
+    - For NaviSense at ASSETS '25.
+  - title: Dr. Tse-Yun Feng Graduate Student Award and Scholarship
+    institution: Penn State
+    description:
+    - For academic and research excellence.
+  - title: Undergraduate Merit Prize
+    institution: IIITDM Kancheepuram
+    description:
+    - Honours student.
+- title: Interests
+  type: nested_list
+  contents:
+  - title: Research
+    items:
+    - Multimodal retrieval and memory
+    - Retrieval-augmented generation
+    - Visual accessibility
+    - On-device AI
+    - Contextual bandits and LLM routing
+    - Model optimization
+  - title: Outside research
+    items:
+    - Cycling
+    - Working out
+    - Creative accessibility technologies

@@ -3,7 +3,7 @@ layout: distill
 title: "InsectAgent: mobile insect recognition with VLM and on-device vision"
 description: A walkthrough of how the InsectAgent app blends a classic vision model with a lightweight multimodal model (FastVLM) to identify insects on your iPhone, and only “thinks harder” when it needs to.
 date: 2025-10-23
-tags: computer-vision, deep-learning, insects, education
+tags: [computer-vision, deep-learning, insects, education]
 giscus_comments: false
 featured: false
 
