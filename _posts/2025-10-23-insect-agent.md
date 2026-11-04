@@ -10,19 +10,17 @@ featured: false
 bibliography: 2025-10-23-insectagent.bib
 
 toc:
-
   - name: Introduction
   - name: What is InsectAgent?
   - name: InsectAgent Pipeline
   - name: Results
   - name: Video demo
   - name: Conclusion & next steps
-
 ---
 
 InsectAgent was presented at ISVLSI 2025 <d-cite key="zhao2025insectagent"></d-cite>. This post gives a brief overview of **InsectAgent**, a small, on-device iOS app that recognizes insects and only “calls in” extra reasoning using a **Multimodal Large Language Model (MLLM/VLM)** when the photo is tricky.
 
-This post is designed for readers with little to no coding experience. We’ll keep things visual and plain-language, and focus on the *why* and *how* of the app’s hybrid pipeline on iPhone.
+This post is designed for readers with little to no coding experience. We’ll keep things visual and plain-language, and focus on the _why_ and _how_ of the app’s hybrid pipeline on iPhone.
 
 I hope you find this exploration both accessible and useful!
 
@@ -45,14 +43,14 @@ The result feels snappy on easy photos and smarter on ambiguous ones—**no clou
 
 **InsectAgent** is an iOS app (Swift/Xcode) (<a href="https://github.com/ajaynarayanan/InsectAgent">code</a>) that demonstrates **hybrid insect recognition** on modern iPhones:
 
-* A **ResNet-18** classifier <d-cite key="he2016deep"></d-cite> provides **top-k** candidates quickly.
-* **FastVLM** <d-cite key="vasu2025fastvlm"></d-cite>, a small multimodal LLM, is engaged **only when the classifier isn’t confident**, using brief, visual-first species descriptions (color patterns, wing venation, antenna shape, etc.) to reason about which candidate fits the image best.
+- A **ResNet-18** classifier <d-cite key="he2016deep"></d-cite> provides **top-k** candidates quickly.
+- **FastVLM** <d-cite key="vasu2025fastvlm"></d-cite>, a small multimodal LLM, is engaged **only when the classifier isn’t confident**, using brief, visual-first species descriptions (color patterns, wing venation, antenna shape, etc.) to reason about which candidate fits the image best.
 
 **Why this design?**
 
-* Many photos are “easy wins”, the correct class is confidently top-1.
-* For borderline cases, the right class often sits *in* the top-k; a little **text-guided reasoning** helps pick the winner.
-* Doing this **conditionally** keeps the common case fast while improving the hard cases.
+- Many photos are “easy wins”, the correct class is confidently top-1.
+- For borderline cases, the right class often sits _in_ the top-k; a little **text-guided reasoning** helps pick the winner.
+- Doing this **conditionally** keeps the common case fast while improving the hard cases.
 
 ---
 
@@ -120,9 +118,9 @@ A MLLM compares the input image with those cue cards, weighs evidence, and selec
 
 **Notes.**
 
-* The threshold **τ** governs how often the VLM is invoked: higher τ → more VLM calls (better accuracy, higher latency); lower τ → fewer calls (faster, slightly lower accuracy).
-* The **0.5B** and **1.5B** VLMs provide a meaningful accuracy bump over vision-only while remaining feasible on device.
-* For broader benchmarks and ablations (e.g., different top-k sizes, cue length), see the paper <d-cite key="zhao2025insectagent"></d-cite>.
+- The threshold **τ** governs how often the VLM is invoked: higher τ → more VLM calls (better accuracy, higher latency); lower τ → fewer calls (faster, slightly lower accuracy).
+- The **0.5B** and **1.5B** VLMs provide a meaningful accuracy bump over vision-only while remaining feasible on device.
+- For broader benchmarks and ablations (e.g., different top-k sizes, cue length), see the paper <d-cite key="zhao2025insectagent"></d-cite>.
 
 ---
 
@@ -145,7 +143,7 @@ Pairing a **fast vision model** with **conditional multimodal reasoning** gives 
 
 **What’s next:**
 
-* **Richer cue cards** — concise, visual-first snippets per class (color/venation/antennae/legs).
-* **More classes & field data** — expand coverage and robustness with diverse outdoor images.
-* **Explainability UI** — “why not *this* species?” side-by-side comparisons to aid learning and trust.
-* **Lightweight field guides** — offline mini-guides for common pests and pollinators.
+- **Richer cue cards** — concise, visual-first snippets per class (color/venation/antennae/legs).
+- **More classes & field data** — expand coverage and robustness with diverse outdoor images.
+- **Explainability UI** — “why not _this_ species?” side-by-side comparisons to aid learning and trust.
+- **Lightweight field guides** — offline mini-guides for common pests and pollinators.

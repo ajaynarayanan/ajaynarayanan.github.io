@@ -1,7 +1,7 @@
 ---
 layout: page
 title: SoleMate
-description: A dynamic, customisable insole for assessing the risk of foot diseases.  
+description: A dynamic, customisable insole for assessing the risk of foot diseases.
 importance: 3
 category: product prototype
 github: https://github.com/ajaynarayanan/SoleMate

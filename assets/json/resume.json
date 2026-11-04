@@ -15,9 +15,7 @@
       "studyType": "Ph.D.",
       "endDate": "2027-05",
       "endDateLabel": "Expected",
-      "courses": [
-        "Advisor: Prof. Vijaykrishnan Narayanan"
-      ]
+      "courses": ["Advisor: Prof. Vijaykrishnan Narayanan"]
     },
     {
       "institution": "The Pennsylvania State University",
@@ -26,9 +24,7 @@
       "area": "Computer Science and Engineering",
       "studyType": "M.S.",
       "endDate": "2024-08",
-      "courses": [
-        "Advisor: Prof. Vijaykrishnan Narayanan"
-      ]
+      "courses": ["Advisor: Prof. Vijaykrishnan Narayanan"]
     },
     {
       "institution": "IIITDM Kancheepuram",
@@ -108,56 +104,23 @@
   "skills": [
     {
       "name": "LLMs and Generative AI",
-      "keywords": [
-        "Transformers",
-        "RAG",
-        "Question answering",
-        "Model routing and selection",
-        "Prompt design",
-        "Grounding and verification"
-      ]
+      "keywords": ["Transformers", "RAG", "Question answering", "Model routing and selection", "Prompt design", "Grounding and verification"]
     },
     {
       "name": "Machine Learning",
-      "keywords": [
-        "PyTorch",
-        "TensorFlow",
-        "Fine-tuning",
-        "Training and evaluation",
-        "Benchmarking"
-      ]
+      "keywords": ["PyTorch", "TensorFlow", "Fine-tuning", "Training and evaluation", "Benchmarking"]
     },
     {
       "name": "Programming",
-      "keywords": [
-        "Python",
-        "Java",
-        "C/C++",
-        "Swift"
-      ]
+      "keywords": ["Python", "Java", "C/C++", "Swift"]
     },
     {
       "name": "Data and Systems",
-      "keywords": [
-        "OpenSearch",
-        "MySQL",
-        "PostgreSQL",
-        "Redis",
-        "REST APIs",
-        "Apache Kafka",
-        "Spring Boot"
-      ]
+      "keywords": ["OpenSearch", "MySQL", "PostgreSQL", "Redis", "REST APIs", "Apache Kafka", "Spring Boot"]
     },
     {
       "name": "Cloud and DevOps",
-      "keywords": [
-        "Docker",
-        "Kubernetes",
-        "AWS",
-        "Azure",
-        "GCP",
-        "Git"
-      ]
+      "keywords": ["Docker", "Kubernetes", "AWS", "Azure", "GCP", "Git"]
     }
   ],
   "awards": [
@@ -208,11 +171,7 @@
     },
     {
       "name": "Outside research",
-      "keywords": [
-        "Cycling",
-        "Working out",
-        "Creative accessibility technologies"
-      ]
+      "keywords": ["Cycling", "Working out", "Creative accessibility technologies"]
     }
   ]
 }

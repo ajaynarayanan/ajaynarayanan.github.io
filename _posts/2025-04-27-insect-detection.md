@@ -16,24 +16,22 @@ toc:
   - name: Conclusion & next steps
 ---
 
+After conducting the [AI for Insect Detection & Classification Workshop](https://insectnet.psu.edu/student-resources/sp25-virtual-workshop-ai-for-insect-detection-classification)<d-cite key="insectnetworkshop2025"></d-cite> at The Pennsylvania State University, I felt motivated to share some of the key ideas more widely.
 
-After conducting the [AI for Insect Detection & Classification Workshop](https://insectnet.psu.edu/student-resources/sp25-virtual-workshop-ai-for-insect-detection-classification)<d-cite key="insectnetworkshop2025"></d-cite> at The Pennsylvania State University, I felt motivated to share some of the key ideas more widely. 
-
-This blog post is designed for readers with little to no coding experience. The goal is to explain how simple motion detection and modern object detection models like YOLO<d-cite key="redmon2016you"></d-cite> can be used to monitor insects — using visuals and plain language, without diving into heavy math or programming details. Images and videos used in the blog are obtained from the InsectEye<d-cite key="homan2023insecteye"></d-cite> system. 
+This blog post is designed for readers with little to no coding experience. The goal is to explain how simple motion detection and modern object detection models like YOLO<d-cite key="redmon2016you"></d-cite> can be used to monitor insects — using visuals and plain language, without diving into heavy math or programming details. Images and videos used in the blog are obtained from the InsectEye<d-cite key="homan2023insecteye"></d-cite> system.
 
 I hope you find this exploration both accessible and interesting!
-
 
 ## Introduction
 
 Step into a field at dawn, and you’ll hear a quiet symphony of tiny wings.  
-Some belong to helpful pollinators 🐝, while others are hungry pests 🐛.  
+Some belong to helpful pollinators 🐝, while others are hungry pests 🐛.
 
 Catching these insects early can protect crops, reduce chemical sprays, and help us understand how seasons and climate shape insect life. But how do you do that without draining batteries or overwhelming tiny edge devices?
 
 We use a **two-step camera system** that’s smart and simple:
 
-1. **Notice insect motion** — “Something moved.”  
+1. **Notice insect motion** — “Something moved.”
 2. **Detect pests with YOLO** — “Which insect is it?”
 
 Let’s dive into how motion spotting and fast object detection help keep a watchful eye on the fields — one tiny wingbeat at a time.
@@ -111,9 +109,9 @@ Motion detection is all around us. Here are a few real-world examples:
 
 Motion detection points out _where_ to look, and **YOLO** tells us _what_ is moving. YOLO<d-cite key="redmon2016you"></d-cite> is an object detection model that draws boxes around objects and labels them. We use YOLO for insects because:
 
-* **Real-time:** Runs at video speed, even on small devices.  
-* **All-in-one:** Finds both location and the insect’s identity in a single pass.  
-* **Open-source:** Free models (YOLOv8) and easy training tools are available.
+- **Real-time:** Runs at video speed, even on small devices.
+- **All-in-one:** Finds both location and the insect’s identity in a single pass.
+- **Open-source:** Free models (YOLOv8) and easy training tools are available.
 
 We now describe the original version of YOLO. Although many improvements have been made across subsequent versions, the core ideas outlined below remain the same.
 
@@ -235,7 +233,7 @@ Combining **motion detection** with **YOLO** creates a nimble tag-team. On a 90,
 
 Next on our roadmap:
 
-* **See even smaller bugs** — add a zoom lens or train YOLO with clearer close-ups.  
-* **Dashboards for farmers** — stream live counts to a phone app for same-day action.  
+- **See even smaller bugs** — add a zoom lens or train YOLO with clearer close-ups.
+- **Dashboards for farmers** — stream live counts to a phone app for same-day action.
 
 Have ideas, questions, or cool bug clips? Drop a comment below — we’d love to chat! 🪲👋

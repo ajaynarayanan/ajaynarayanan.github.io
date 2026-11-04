@@ -7,6 +7,7 @@ on:
       - main
     paths:
       - "assets/**"
+      - "bin/check_site.py"
       - "**.html"
       - "**.js"
       - "**.liquid"
@@ -25,6 +26,7 @@ on:
       - main
     paths:
       - "assets/**"
+      - "bin/check_site.py"
       - "**.html"
       - "**.js"
       - "**.liquid"
@@ -44,9 +46,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Link Checker 🔗
-        uses: lycheeverse/lychee-action@v2.1.0
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
         with:
-          fail: true
-          # removed md files that include liquid tags
-          args: --user-agent 'curl/7.54' --exclude-path README.md --exclude-path _pages/404.md --exclude-path _pages/blog.md --exclude-path _posts/2018-12-22-distill.md --exclude-path _posts/2023-04-24-videos.md --exclude-path _books/the_godfather.md --verbose --no-progress './**/*.md' './**/*.html'
+          ruby-version: "3.3"
+          bundler-cache: true
+      - name: Install image tools and build site
+        env:
+          JEKYLL_ENV: production
+        run: |
+          sudo apt-get update && sudo apt-get install -y imagemagick
+          bundle exec jekyll build
+      - name: Check generated internal links and assets
+        run: python3 bin/check_site.py _site
